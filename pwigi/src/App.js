@@ -3,8 +3,8 @@ import Header from './Header.js';
 import Nav from './Nav';
 import Gallery from './Gallery.js';
 import Footer from './Footer.js';
-//import Box from './Box.js'
 import './App.css';
+
 
 export default class App extends React.Component {
   render() {

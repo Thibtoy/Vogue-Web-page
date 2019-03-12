@@ -1,38 +1,40 @@
 import React from 'react';
 
 export default class Box extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			Tittle: [],
-			image: [], 
-			presentation: [],
-		}
-	}
+    render () {
+		console.log(this.props.item)
+        return (
+            <div className="Box">
+				<h2>{this.props.item.articles_name}</h2>
+				<div className="Lupitaimages">
+				<img src={process.env.PUBLIC_URL + this.props.item.articles_photo1} alt="can't load"/>
+				</div>
+            </div>
+			//<img src={require('this.props.articles_photo1')} alt="impossible to load"></img> 
+            
+        )
+    }
+}
 
-	componentWillMount() {
+
+
+
+	/*componentWillMount() {
 		fetch('http://localhost:3000/')
 		.then(responses => {
-			console.log(responses);
-			return results.json();
+			return responses.json();
 		}).then(data => {
-			let pictures = data.results.map((pic) => {
+			let pictures = data.map((pic) => {
 				return (
-					<h2 key={pic.results}>{pic.articles_name}</h2>
+					<h2 key={pic}>{pic.articles_name}</h2>
 					)
 			})
 			this.setState( {Tittle: pictures});
 			console.log("tittle", this.state.Tittle)
 		})
-	}
+	}*/
 
-    render () {
-        return (
-            <div className="Box">
-            	{this.state.Tittle}
-            </div>
-        )
-    }
-}
+
+
 
 //<img src="blablabla.png"></img>
